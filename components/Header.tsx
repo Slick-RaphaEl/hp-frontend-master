@@ -1,12 +1,14 @@
 import { useState } from "react";
 import {AiOutlineClose} from 'react-icons/ai'
 import { HiMenu} from 'react-icons/hi'
+import { useSession, signIn, signOut } from "next-auth/react"
 
 const Header = () => {
     const [mobileNav, setmobileNav] = useState<boolean>(false);
     const toggleMobileNav = () => {
         setmobileNav(!mobileNav);
     }
+    const {data: session} = useSession()
 
   return (
     <div
@@ -26,12 +28,14 @@ const Header = () => {
             className="hidden md:flex flex-row text-gray-600 font-semibold text-base"
         >
             <a
+                href="/"
                 className="pr-4"
             >
                 HOME
             </a>
             <a
                 className="pr-4"
+                onClick={()=> signIn()}
             >
                 PROFILE
             </a>

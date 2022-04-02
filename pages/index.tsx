@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -14,7 +13,7 @@ const Home: NextPage = () => {
     <div className="flex min-h-screen flex-col">
       <Header />
       <div
-        className='w-full h-[60vh]'
+        className='w-full h-[60vh] mb-20'
       >
         <Carousel
           autoPlay={true}
@@ -23,10 +22,11 @@ const Home: NextPage = () => {
           stopOnHover={true}
           swipeable={true}
           centerMode={true}
-          centerSlidePercentage={50}
+          centerSlidePercentage={55}
+          showThumbs={false}
           className='w-full h-full'
         >
-          <div className='mx-10'>
+          <div className='mx-5'>
             <Image
               src={require('../images/hero_1.jpeg')}
               alt="hero slider"
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
               height={500}
             />
           </div>
-          <div className='mx-10'>
+          <div className='mx-5'>
             <Image
               src={require('../images/hero_2.jpeg')}
               alt="hero slider"
@@ -42,7 +42,7 @@ const Home: NextPage = () => {
               height={500}
             />
           </div>
-          <div className='mx-10'>
+          <div className='mx-5'>
             <Image
               src={require('../images/hero_3.jpeg')}
               alt="hero slider"
