@@ -16,6 +16,7 @@ const Header = () => {
     >
         <a
             className="text-gray-900 font-bold text-xl flex flex-row"
+            href="/"
         >
             <span
                 className="text-green-500 pr-2"
@@ -33,12 +34,32 @@ const Header = () => {
             >
                 HOME
             </a>
-            <a
-                className="pr-4"
-                onClick={()=> signIn()}
-            >
-                PROFILE
-            </a>
+            {
+                session ? (
+                    <div className='flex flex-row'>
+                    <a
+                        className="pr-4 cursor-pointer"
+                        href='/profile'
+                    >
+                        PROFILE
+                    </a>
+                    <a
+                        className="pr-4 cursor-pointer"
+                        onClick={() => signOut()}
+                    >
+                        SIGN OUT
+                    </a>
+                    </div>
+                ) :
+                (
+                    <a
+                        className="pr-4 cursor-pointer"
+                        onClick={() => signIn()}
+                    >
+                        SIGN IN
+                    </a>
+                )
+            }
             <a
                 className="pr-4"
             >
@@ -46,6 +67,7 @@ const Header = () => {
             </a>
             <a
                 className="pr-4"
+                href="/programmes"
             >
                 APPLY
             </a>
