@@ -5,10 +5,10 @@ import BtnFull from './BtnFull'
 const OurProgrammes = ({image, heading, paragraph}) => {
   return (
     <div
-        className='w-[90%] md:w-[80%] mx-auto flex flex-row my-10'
+        className='w-[90%] md:w-[80%] mx-auto flex flex-col md:flex-row my-10'
     >
         <div
-            className="w-[60%] md:w-[50%] mx-auto"
+            className="w-[80%] md:w-[50%] mx-auto"
         >
             <Image
                 src={image}
@@ -19,7 +19,7 @@ const OurProgrammes = ({image, heading, paragraph}) => {
             />
         </div>
         <div
-            className="flex flex-col px-10 w-[40%] md:w-[50%] mx-auto"
+            className="flex flex-col px-10 w-[80%] md:w-[50%] mx-auto"
         >
             <h2 
                 className="text-2xl font-semibold uppercase text-center mb-5 text-green-500"
